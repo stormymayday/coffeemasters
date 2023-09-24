@@ -1,6 +1,7 @@
 import './style.css';
 import Store from './services/Store.js';
 import API from './services/API.js';
+import { loadData } from './services/Menu.js';
 import logoPNG from './src/logo.png';
 import blackamericano from './src/images/blackamericano.png';
 
