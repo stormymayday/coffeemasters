@@ -12,7 +12,7 @@ window.app = {};
 // 2. Hooking Store to the app.store
 app.store = Store;
 
-// Making Router global
+// Making Router global 
 app.router = Router;
 
 
