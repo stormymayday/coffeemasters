@@ -2,14 +2,22 @@ const Router = {
 
     init: () => {
 
-        document.querySelectorAll('a.navlink').forEach((a) => {
+        document.querySelectorAll('a.navlink').forEach((anchorTag) => {
 
-            a.addEventListener("click", event => {
+            anchorTag.addEventListener("click", event => {
 
                 // Stopping the browser from creating new navigation
                 event.preventDefault();
 
-                console.log(`link clicked`);
+                // Reading the href property of the anchorTag
+                // Option 1: Using Property
+                // const url = anchorTag.href;
+                // Option 2: Using Attribute
+                // Note: The href property returns the full URL while the getAttribute method will only return the pathname if that is what's in the attribute
+                const url = anchorTag.getAttribute("href");
+
+                // Calling the go method using the url
+                Router.go(url);
 
             });
 
