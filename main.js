@@ -1,5 +1,6 @@
 import './style.css';
 import Store from './services/Store.js';
+import Router from './services/Router.js';
 import API from './services/API.js';
 import { loadData } from './services/Menu.js';
 import logoPNG from './src/logo.png';
@@ -10,6 +11,9 @@ import blackamericano from './src/images/blackamericano.png';
 window.app = {};
 // 2. Hooking Store to the app.store
 app.store = Store;
+
+// Making Router global
+app.router = Router;
 
 
 window.addEventListener("DOMContentLoaded", async () => {
