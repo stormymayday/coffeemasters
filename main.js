@@ -14,5 +14,12 @@ app.store = Store;
 
 window.addEventListener("DOMContentLoaded", async () => {
 
+  // 1. calling loadData form Menu.js
+  // 2. loadData calling the API.fetchMenu
+  // 3. loadData storing the result in window.app.store
+  loadData();
+
+  console.log(window.app);
+
 });
 
