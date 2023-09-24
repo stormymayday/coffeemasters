@@ -32,6 +32,13 @@ const Router = {
 
         console.log(`Going to ${route}`);
 
+        if (addToHistory) {
+
+            // Adding route to the History API
+            history.pushState({ route }, '', route);
+
+        }
+
     },
 
 
