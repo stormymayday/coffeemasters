@@ -23,6 +23,15 @@ const Router = {
 
         });
 
+        // Event Handler for URL changes
+        window.addEventListener("popstate", event => {
+
+            // Reading the route object that was pushed to the History API
+            // The second argument (false) prevents adding another entry to the History API
+            Router.go(event.state.route, false);
+
+        });
+
         // Checking the initial URL
         Router.go(location.pathname);
 
@@ -56,6 +65,22 @@ const Router = {
                 pageElement.textContent = "Your Order";
 
                 break;
+
+            default:
+
+                if (route.startsWith("/product-")) {
+
+                    pageElement = document.createElement("h1");
+                    pageElement.textContent = "Details";
+
+                    // Getting the ID
+                    const paramId = route.substring(route.lastIndexOf("-") + 1);
+
+                    // Setting the dataset attribute
+                    // "data-id"
+                    pageElement.dataset.id = paramId;
+
+                }
 
         }
 
