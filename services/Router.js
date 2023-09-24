@@ -23,6 +23,9 @@ const Router = {
 
         });
 
+        // Checking the initial URL
+        Router.go(location.pathname);
+
     },
 
     go: (route, addToHistory = true) => {
