@@ -39,8 +39,66 @@ const Router = {
 
         }
 
-    },
+        let pageElement = null;
 
+        switch (route) {
+
+            case "/":
+
+                pageElement = document.createElement("h1");
+                pageElement.textContent = "Menu";
+
+                break;
+
+            case "/order":
+
+                pageElement = document.createElement("h1");
+                pageElement.textContent = "Your Order";
+
+                break;
+
+        }
+
+        // Checking if there is a pageElement to render
+        // (If Router found a valid route)
+        if (pageElement) {
+
+            // Caching the <main id="app">
+            const appContainer = document.querySelector("#app");
+
+            // Clearing the appContainer
+            appContainer.innerHTML = "";
+
+            // Inserting the page content
+            appContainer.appendChild(pageElement);
+
+            // Resetting the scroll position
+            // Going to the top both horizontally and vertically
+            window.scrollX = 0;
+            window.scrollY = 0;
+
+        } else {
+
+            // Caching the <main id="app">
+            const appContainer = document.querySelector("#app");
+
+            pageElement = document.createElement("h1");
+            pageElement.textContent = "Page Not Found";
+
+            // Clearing the appContainer
+            appContainer.innerHTML = "";
+
+            // Inserting the page content
+            appContainer.appendChild(pageElement);
+
+            // Resetting the scroll position
+            // Going to the top both horizontally and vertically
+            window.scrollX = 0;
+            window.scrollY = 0;
+
+        }
+
+    },
 
 };
 
