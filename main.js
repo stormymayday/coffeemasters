@@ -23,6 +23,10 @@ window.addEventListener("DOMContentLoaded", async () => {
   // 3. loadData storing the result in window.app.store
   loadData();
 
+  // Initializing the Router
+  // Note: this removes the page refresh behavior when 'a.navlink' is clicked
+  app.router.init();
+
   console.log(window.app);
 
 });
