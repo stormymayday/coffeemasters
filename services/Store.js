@@ -8,4 +8,4 @@ const proxyStore = new Proxy(Store, {
 
 });
 
-export default Store;
+export default proxyStore;
