@@ -3,7 +3,11 @@ import Store from './services/Store.js';
 import Router from './services/Router.js';
 import API from './services/API.js';
 import { loadData } from './services/Menu.js';
+
+// Web Components:
 import MenuPage from './components/MenuPage.js';
+import DetailsPage from './components/DetailsPage.js';
+
 import logoPNG from './src/logo.png';
 import blackamericano from './src/images/blackamericano.png';
 
