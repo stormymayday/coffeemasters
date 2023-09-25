@@ -42,6 +42,19 @@ export default class MenuPage extends HTMLElement {
         // Appending the content
         this.root.appendChild(content);
 
+        // Listening for the 'app-menu-change' event from the proxyStore
+        window.addEventListener('app-menu-change', () => {
+
+            // If menu changes, calling the render method
+            this.render();
+
+        });
+
+    }
+
+    // Render method for the UI
+    render() {
+
     }
 
 }

@@ -3,10 +3,10 @@ const Store = {
     cart: [],
 }
 
-// Creating a Proxy
+// Creating a Proxy that would broadcast changes
 const proxyStore = new Proxy(Store, {
 
-    // Trap for set
+    // Setting a trap for the 'set' method
     set(targetObject, propertyName, propertyValue) {
 
         // Assigning the value
@@ -24,6 +24,7 @@ const proxyStore = new Proxy(Store, {
 
         }
 
+        // Checking if property is 'cart'
         if (propertyName === 'cart') {
 
             window.dispatchEvent(new Event('app-cart-change'));
