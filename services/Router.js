@@ -54,8 +54,7 @@ const Router = {
 
             case "/":
 
-                pageElement = document.createElement("h1");
-                pageElement.textContent = "Menu";
+                pageElement = document.createElement("menu-page");
 
                 break;
 

@@ -8,4 +8,4 @@ export default class OrderPage extends HTMLElement {
 
 }
 
-customElements.define("order-page", MenuPage);
+customElements.define("order-page", OrderPage);

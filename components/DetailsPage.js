@@ -8,4 +8,4 @@ export default class DetailsPage extends HTMLElement {
 
 }
 
-customElements.define("details-page", MenuPage);
+customElements.define("details-page", DetailsPage);
