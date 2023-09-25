@@ -7,6 +7,7 @@ import { loadData } from './services/Menu.js';
 // Web Components:
 import MenuPage from './components/MenuPage.js';
 import DetailsPage from './components/DetailsPage.js';
+import OrderPage from './components/OrderPage.js';
 
 import logoPNG from './src/logo.png';
 import blackamericano from './src/images/blackamericano.png';
