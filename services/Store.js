@@ -3,4 +3,9 @@ const Store = {
     cart: [],
 }
 
+// Creating a Proxy
+const proxyStore = new Proxy(Store, {
+
+});
+
 export default Store;
