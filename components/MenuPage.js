@@ -13,22 +13,8 @@ export default class MenuPage extends HTMLElement {
         // Attaching styles to Shadow DOM
         this.root.appendChild(styles);
 
-        // Loading the  CSS
-        async function loadCSS() {
-
-            // Fetching the CSS
-            const request = await fetch("./components/MenuPage.css");
-
-            // 
-            const css = await request.text();
-
-            console.log(css);
-
-            // Filling the styles object (Currently not working)
-            styles.textContent = css;
-
-            // Temporary workaround
-            styles.textContent = `
+        // Temporary workaround
+        styles.textContent = `
                 ul {
                     list-style: none;
                     padding: 0;
@@ -97,9 +83,22 @@ export default class MenuPage extends HTMLElement {
                 }
             `;
 
+
+        // Loading the  CSS
+        async function loadCSS() {
+
+            // Fetching the CSS
+            const request = await fetch("./components/MenuPage.css");
+
+            // 
+            const css = await request.text();
+
+            // Filling the styles object (Currently not working)
+            styles.textContent = css;
+
         }
 
-        loadCSS();
+        // loadCSS();
 
     }
 
