@@ -79,7 +79,7 @@ export default class MenuPage extends HTMLElement {
 
                 .price {
                     margin: 0px 0 0px 12px;
-                    color: #B08968
+                    color: #B08968;
                 }
             `;
 
