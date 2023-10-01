@@ -105,7 +105,7 @@ export default class MenuPage extends HTMLElement {
     // When component is attached to the DOM
     connectedCallback() {
 
-        // Getting the template from the DOM
+        // Getting template from the DOM
         const template = document.getElementById('menu-page-template');
 
         // Cloning the template
@@ -178,4 +178,5 @@ export default class MenuPage extends HTMLElement {
 
 }
 
+// Registering custom element
 customElements.define("menu-page", MenuPage);
