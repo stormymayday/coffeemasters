@@ -150,6 +150,20 @@ export default class MenuPage extends HTMLElement {
                 // Appending 'liCategory' to the 'menu'
                 this.root.querySelector('#menu').appendChild(liCategory);
 
+                // For each product in the array (products):
+                category.products.forEach(product => {
+
+                    // Creating a new 'product-item' element
+                    const item = document.createElement('product-item');
+
+                    // Passing current product into component
+                    item.dataset.product = JSON.stringify(product);
+
+                    // Attaching 'item' to the 'liCategory'
+                    liCategory.querySelector('ul').appendChild(item);
+
+                });
+
             }
 
         } else {
