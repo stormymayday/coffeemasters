@@ -1,11 +1,14 @@
+import menu from '../src/menu.json';
+
 const API = {
 
-    url: "/src/menu.json",
+    // url: "/src/menu.json",
     fetchMenu: async () => {
 
-        const result = await fetch(API.url);
+        // const result = await fetch(API.url);
+        // return await result.json();
 
-        return await result.json();
+        return await menu;
 
     }
 

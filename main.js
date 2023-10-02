@@ -36,6 +36,8 @@ app.router = Router;
 
 window.addEventListener("DOMContentLoaded", async () => {
 
+  // console.log(menu);
+
   // 1. calling loadData form Menu.js
   // 2. loadData calling the API.fetchMenu
   // 3. loadData storing the result in window.app.store
