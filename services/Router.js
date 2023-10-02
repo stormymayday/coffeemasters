@@ -60,8 +60,8 @@ const Router = {
 
             case "/order":
 
-                pageElement = document.createElement("h1");
-                pageElement.textContent = "Your Order";
+                pageElement = document.createElement("order-page");
+                // pageElement.textContent = "Your Order";
 
                 break;
 
@@ -69,8 +69,9 @@ const Router = {
 
                 if (route.startsWith("/product-")) {
 
-                    pageElement = document.createElement("h1");
-                    pageElement.textContent = "Details";
+                    // pageElement = document.createElement("h1");
+                    pageElement = document.createElement("details-page");
+                    // pageElement.textContent = "Details";
 
                     // Getting the ID
                     const paramId = route.substring(route.lastIndexOf("-") + 1);

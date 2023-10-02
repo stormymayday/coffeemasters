@@ -17,13 +17,13 @@ export async function getProductById(id) {
     }
 
     // Going through every category
-    for (let category of app.store.name) {
+    for (let category of app.store.menu) {
 
         // Going through every product within the category
         for (let product of category.products) {
 
             // Checking if the id matches with product id
-            if (product.id === id) {
+            if (product.id == id) {
 
                 return product;
 
