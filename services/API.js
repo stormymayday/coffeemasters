@@ -1,4 +1,4 @@
-import menu from '../src/menu.json';
+import menu from '../src/menu.js';
 
 const API = {
 
@@ -6,6 +6,7 @@ const API = {
     fetchMenu: async () => {
 
         // const result = await fetch(API.url);
+
         // return await result.json();
 
         return await menu;
