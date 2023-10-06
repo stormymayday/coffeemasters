@@ -1,15 +1,19 @@
 import { removeFromCart } from "../services/Order.js";
 
 export default class CartItem extends HTMLElement {
+
     constructor() {
+
         super();
+
     }
 
     connectedCallback() {
 
         const item = JSON.parse(this.dataset.item);
 
-        this.innerHTML = ""; // Clear the element
+        // Clear the element
+        this.innerHTML = "";
 
         const template = document.getElementById("cart-item-template");
 
@@ -18,8 +22,11 @@ export default class CartItem extends HTMLElement {
         this.appendChild(content);
 
         this.querySelector(".qty").textContent = `${item.quantity}x`;
+
         this.querySelector(".name").textContent = item.product.name;
+
         this.querySelector(".price").textContent = `$${item.product.price.toFixed(2)}`;
+
         this.querySelector("a.delete-button").addEventListener("click", event => {
             removeFromCart(item.product.id);
         })

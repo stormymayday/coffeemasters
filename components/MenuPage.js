@@ -7,7 +7,7 @@ export default class MenuPage extends HTMLElement {
         // Creating Shadow DOM with mode 'open'
         this.root = this.attachShadow({ mode: 'open' });
 
-        // Creating styles object
+        // Creating styles element
         const styles = document.createElement('style');
 
         // Attaching styles to Shadow DOM

@@ -39,7 +39,7 @@ const Router = {
 
     go: (route, addToHistory = true) => {
 
-        console.log(`Going to ${route}`);
+        // console.log(`Going to ${route}`);
 
         if (addToHistory) {
 
