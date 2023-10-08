@@ -1,5 +1,12 @@
 export default class OrderPage extends HTMLElement {
 
+    // Private object
+    #user = {
+        name: "",
+        phone: "",
+        email: "",
+    }
+
     constructor() {
 
         super();
@@ -175,28 +182,81 @@ export default class OrderPage extends HTMLElement {
             const template = document.getElementById("order-form-template");
 
             const content = template.content.cloneNode(true);
+
             section.appendChild(content);
 
             let total = 0;
 
             for (let prodInCart of app.store.cart) {
+
                 const item = document.createElement("cart-item");
+
                 item.dataset.item = JSON.stringify(prodInCart);
+
                 this.root.querySelector("ul").appendChild(item);
 
                 total += prodInCart.quantity * prodInCart.product.price;
+
             }
 
             this.root.querySelector("ul").innerHTML += `
-            <li>
-                <p class='total'>Total</p>
-                <p class='price-total'>$${total.toFixed(2)}</p>
-            </li>                
-        `;
-
+                <li>
+                    <p class='total'>Total</p>
+                    <p class='price-total'>$${total.toFixed(2)}</p>
+                </li>                
+            `;
 
         }
+
+        this.setFormBindings(this.root.querySelector('form'));
+
     }
+    // end of render
+
+    setFormBindings(form) {
+
+        form.addEventListener('submit', event => {
+
+            event.preventDefault();
+
+            alert(`Thanks for your order ${this.#user.name}`);
+
+            this.#user.name = '';
+            this.#user.email = '';
+            this.#user.phone = '';
+
+            // Send data to the server
+
+        });
+
+        // Setting double data binding
+        this.#user = new Proxy(this.#user, {
+
+            set(target, property, value) {
+
+                target[property] = value;
+
+                form.elements[property].value = value;
+
+                return true;
+
+            }
+
+        });
+
+        Array.from(form.elements).forEach(element => {
+
+            element.addEventListener('change', event => {
+
+                this.#user[element.name] = element.value;
+
+            });
+
+        });
+
+    }
+    // end of setFormBindings
+
 }
 
 customElements.define("order-page", OrderPage);

@@ -122,6 +122,8 @@ export default class MenuPage extends HTMLElement {
 
         });
 
+        this.render();
+
     }
 
     // Rendering the menu
